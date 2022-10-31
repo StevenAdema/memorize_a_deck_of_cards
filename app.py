@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, url_for, flash
 from werkzeug.utils import redirect
 from flask_mysqldb import MySQL
-
+import pandas as pd
 
 app = Flask(__name__)
 app.secret_key = 'many random bytes'
@@ -17,10 +17,14 @@ mysql = MySQL(app)
 def Index():
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM card_system")
-    data = cur.fetchall()
-    cur.close()
+    data = pd.DataFrame(cur.fetchall())
+    images = data[7].to_list()
+    per = data[4]
+    act = data[5]
+    obj = data[6]
+    # imgs = data[7]
 
-    return render_template('index.html', card_system=data)
+    return render_template('index.html', data=zip(images,per,act,obj))
 
 
 @app.route('/insert', methods = ['POST'])

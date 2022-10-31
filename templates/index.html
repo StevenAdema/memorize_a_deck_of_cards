@@ -1,36 +1,72 @@
 <html>
-    <head>
-        <title>Carousel</title>
-        <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
-        <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
-        <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
-    </head>
-    <body>
-        <div class="container">
-            <h2 class="page-header text-primary text-center"><i class="fa fa-image">Interactive Deck of Cards</i></h2>
-            <div id="myCarousel" class="carousel slide">
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0"></li>
-                    <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    {% for row in card_system %}
-                    <div class="item">
-                        {{row.1}}
-                        <a href="{{ url_for('static', filename='img/' + row.1) + '.svg/' }}">{{ row.1 }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="fa fa-chevron-left fa-lg" style="margin-top:400px"></span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="fa fa-chevron-right fa-lg" style="margin-top:400px"></span>
-                </a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ===== Link Swiper's CSS ===== -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <!-- ===== Fontawesome CDN Link ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+        
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+
+  <section>
+    
+    <div class="swiper mySwiper container">
+      <div class="swiper-wrapper content">
+
+        {% for row,per,act,obj in data %}
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="{{ row }}">
             </div>
+
+            <div class="name-profession">
+              <span class="name">A♥️</span>
+              <span class="profession">{{ per }}</span>
+              <span class="profession">{{ act }}</span>
+              <span class="profession">{{ obj }}</span>
+            </div>
+          </div>
         </div>
-        </div>
-    </body>
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+  </section>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+</body>
 </html>
