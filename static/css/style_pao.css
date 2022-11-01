@@ -17,21 +17,12 @@ body{
 }
 
 section{
-  position: absolute;  
-  top: 30%;
+  position: relative;  
   height: 450px;
   width: 80%;
   max-width: 1050px;
   display: flex;
   align-items: center;
-}
-
-.header{
-  position: absolute; 
-  z-index: 15;
-  top: 5%;
-  height: 15%;
-  width: 60%;
 }
 
 .swiper{
@@ -131,38 +122,4 @@ section .card .image img{
 .mini-card{
   height: 25%;
   width:  25%;
-}
-
-/*********************** The Form **************************/
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #1A2238;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-li {
-  float: left;
-  border-right: 1px solid #bbb;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
-}
-
-.active {
-  background-color: #4CAF50;
 }

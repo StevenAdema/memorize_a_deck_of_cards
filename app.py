@@ -13,59 +13,67 @@ app.config['MYSQL_DB'] = 'deck_mem'
 
 mysql = MySQL(app)
 
+@app.route('/index')
 @app.route('/')
 def Index():
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM card_system")
-    data = pd.DataFrame(cur.fetchall())
-    images = data[7].to_list()
-    per = data[4]
-    act = data[5]
-    obj = data[6]
-    # imgs = data[7]
+    df = pd.DataFrame(cur.fetchall())
+    df = df.sample(frac=1).reset_index(drop=True) 
+    index = df.index.values.tolist()
+    first = [0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51]
+    second = [1,4,7,10,13,16,19,22,25,28,31,34,37,40,43,46,49,52]
+    images = df[7]
+    per = df[4]
+    act = df[5]
+    obj = df[6]
 
-    return render_template('index.html', data=zip(images,per,act,obj))
+    return render_template('index.html', data=zip(images,per,act,obj,index), first=first, second=second)
 
-
-@app.route('/insert', methods = ['POST'])
-def insert():
-    if request.method == "POST":
-        flash("Data Inserted Successfully")
-        name = request.form['name']
-        email = request.form['email']
-        phone = request.form['phone']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO students (name, email, phone) VALUES (%s, %s, %s)", (name, email, phone))
-        mysql.connection.commit()
-        return redirect(url_for('Index'))
-
-@app.route('/delete/<string:id_data>', methods = ['GET'])
-def delete(id_data):
-    flash("Record Has Been Deleted Successfully")
+@app.route('/memory_palace')
+def memory_palace():
     cur = mysql.connection.cursor()
-    cur.execute("DELETE FROM students WHERE id=%s", (id_data,))
-    mysql.connection.commit()
-    return redirect(url_for('Index'))
+    cur.execute("SELECT * FROM card_system")
+    df = pd.DataFrame(cur.fetchall())
+    df = df.sample(frac=1).reset_index(drop=True) 
+    index = df.index.values.tolist()
+    first = [0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51]
+    second = [1,4,7,10,13,16,19,22,25,28,31,34,37,40,43,46,49,52]
+    images = df[7]
+    per = df[4]
+    act = df[5]
+    obj = df[6]
 
+    return render_template('index.html', data=zip(images,per,act,obj,index), first=first, second=second)
 
+@app.route('/deck_memorization')
+def deck_memorization():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM card_system")
+    df = pd.DataFrame(cur.fetchall())
+    df = df.sample(frac=1).reset_index(drop=True) 
+    index = df.index.values.tolist()
+    first = [0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51]
+    second = [1,4,7,10,13,16,19,22,25,28,31,34,37,40,43,46,49,52]
+    images = df[7]
+    per = df[4]
+    act = df[5]
+    obj = df[6]
 
-@app.route('/update', methods= ['POST', 'GET'])
-def update():
-    if request.method == 'POST':
-        id_data = request.form['id']
-        name = request.form['name']
-        email = request.form['email']
-        phone = request.form['phone']
+    return render_template('deck_memorization.html', data=zip(images,per,act,obj,index), first=first, second=second)
 
-        cur = mysql.connection.cursor()
-        cur.execute("""
-        UPDATE students SET name=%s, email=%s, phone=%s
-        WHERE id=%s
-        """, (name, email, phone, id_data))
-        flash("Data Updated Successfully")
-        return redirect(url_for('Index'))
+@app.route('/card_PAO_memorization')
+def card_PAO_memorization():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM card_system")
+    df = pd.DataFrame(cur.fetchall())
+    df = df.sample(frac=1).reset_index(drop=True) 
+    images = df[7]
+    per = df[4]
+    act = df[5]
+    obj = df[6]
 
-
+    return render_template('card_PAO_memorization.html', data=zip(images,per,act,obj))
 
 
 if __name__ == "__main__":
