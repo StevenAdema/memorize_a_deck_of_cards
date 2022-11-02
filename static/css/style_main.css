@@ -14,7 +14,7 @@ body{
 
 .grid-container {
   display: grid;
-  height: 90%;
+  height: 60%;
   align-content: center;
   grid-template-columns: auto;
   gap: 10px;
@@ -37,7 +37,17 @@ body{
   padding: 20px 20px;
   font-size: 1.4em;
   width: 100%;
-  text-align: left;
+  text-align: center;
+  color: white;
+}
+
+.welcome-3 {
+  background-color: rgba(255, 255, 255, 0.0);
+  text-align: center;
+  padding: 20px 20px;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: center;
   color: white;
 }
 
@@ -69,9 +79,42 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
+  background-color: #9DAAF2;
 }
 
 .active {
-  background-color: #4CAF50;
+  background-color: #FF6a3d;
+}
+
+/*************************   TABLE   ***********************************/
+table{
+	min-width: 100px !important;
+	width: 50%;
+  align-content: center;
+  margin: auto;
+  padding-top: 10%;
+  border: none;
+}
+
+th {
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #F4DB7D;
+  background-color: #10131b;
+}
+
+td{
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+}
+
+tr:nth-child(odd) {
+	background-color: #22293b;
+}
+
+tr:nth-child(even) {
+	background-color: #1A2238;
 }

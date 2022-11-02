@@ -14,13 +14,14 @@
   <ul>
     <li><a href="{{ url_for('Index') }}">Home</a></li>
     <li><a href="{{ url_for('memory_palace') }}">Memory Palace</a></li>
+    <li><a href="{{ url_for('PAO_system') }}">PAO System</a></li>
     <li><a href="{{ url_for('card_PAO_memorization') }}">Single Card PAO</a></li>
     <li><a href="{{ url_for('deck_memorization') }}">Deck Memorization</a></li>
     <li><a href="{{ url_for('Index') }}">About</a></li>
   </ul>
 </div>
+
   <section>
-    
     <div class="swiper mySwiper container">
       <div class="swiper-wrapper content">
 
@@ -48,73 +49,25 @@
       <div class="swiper-pagination"></div>
   </section>
 
-<!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
-    let appendNumber = 52;
-    let prependNumber = 1;
-    const swiper = new Swiper('.swiper', {
+    var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
-      centeredSlides: true,
       spaceBetween: 30,
+      slidesPerGroup: 1,
+      loop: true,
+      loopFillGroupWithBlank: true,
       pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
+        el: ".swiper-pagination",
+        clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      virtual: {
-        slides: (function () {
-          const slides = [];
-          for (var i = 0; i < 52; i += 1) {
-            slides.push('Slide ' + (i + 1));
-          }
-          return slides;
-        })(),
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
     });
-
-    document
-      .querySelector('.slide-1')
-      .addEventListener('click', function (e) {
-        e.preventDefault();
-        swiper.slideTo(0, 0);
-      });
-
-    document
-      .querySelector('.slide-250')
-      .addEventListener('click', function (e) {
-        e.preventDefault();
-        swiper.slideTo(249, 0);
-      });
-
-    document
-      .querySelector('.slide-500')
-      .addEventListener('click', function (e) {
-        e.preventDefault();
-        swiper.slideTo(499, 0);
-      });
-
-    document
-      .querySelector('.prepend-2-slides')
-      .addEventListener('click', function (e) {
-        e.preventDefault();
-        swiper.virtual.prependSlide([
-          'Slide ' + --prependNumber,
-          'Slide ' + --prependNumber,
-        ]);
-      });
-
-    document
-      .querySelector('.append-slide')
-      .addEventListener('click', function (e) {
-        e.preventDefault();
-        swiper.virtual.appendSlide('Slide ' + ++appendNumber);
-      });
   </script>
 
 </body>
