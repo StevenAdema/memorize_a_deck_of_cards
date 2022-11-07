@@ -26,7 +26,7 @@ body{
   background-color: rgba(255, 255, 255, 0.0);
   text-align: center;
   padding: 20px 20px;
-  font-size: 3em;
+  font-size: 58px;
   width: 100%;
   color: #F4DB7D;
 }
@@ -35,7 +35,7 @@ body{
   background-color: rgba(255, 255, 255, 0.0);
   text-align: center;
   padding: 20px 20px;
-  font-size: 1.4em;
+  font-size: 36px;
   width: 100%;
   text-align: center;
   color: white;
@@ -52,7 +52,7 @@ body{
 }
 
 
-/*********************** NavBar **************************/
+/***********************     NAV BAR   **************************/
 ul {
   list-style-type: none;
   margin: 0;
@@ -62,6 +62,7 @@ ul {
   position: fixed;
   top: 0;
   width: 100%;
+  font-size: 30px;
 }
 
 li {
@@ -73,7 +74,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 15px 20px;
   text-decoration: none;
 }
 
@@ -92,14 +93,14 @@ table{
 	width: 50%;
   align-content: center;
   margin: auto;
-  padding-top: 10%;
+  padding-top: 160px; 
   border: none;
 }
 
 th {
   border: none;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 38px;
   color: #F4DB7D;
   background-color: #10131b;
 }
@@ -107,7 +108,7 @@ th {
 td{
   border: none;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 28px;
   color: white;
 }
 

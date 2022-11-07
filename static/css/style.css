@@ -18,7 +18,7 @@ body{
 
 section{
   position: absolute;  
-  top: 30%;
+  top: 50%;
   height: 450px;
   width: 80%;
   max-width: 1050px;
@@ -30,7 +30,7 @@ section{
   position: absolute;
   z-index: 15;
   top: 5%;
-  height: 15%;
+  height: 5%;
   width: 100%;
 }
 
@@ -40,7 +40,8 @@ section{
 
 .card{
   position: relative;
-  background: #1A2238;
+  background: red;
+  height:50%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -57,46 +58,33 @@ section{
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*padding: 10px;*/
+  /* padding: 30px; */
   position: relative;
-  z-index: 100;
+  /* z-index: 100; */
 }
 
 
 section .card .image img{
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);v
+  object-fit: contain;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card .media-icons{
   position: absolute;
   top: 10px;
-  right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.card .name-profession{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  color: ;
-} 
-
-.name-profession .name{
-  font-size: 20px;
+.name-profession{
+  font-size:24px;
   font-weight: 600;
   color: #fff;
-}
-
-.name-profession .profession{
-  font-size:15px;
-  font-weight: 600;
-  color: #fff;
+  text-align: center;
+  padding: 20px;
 }
 
 
@@ -105,13 +93,17 @@ section .card .image img{
 }
 
 .swiper-pagination{
-  position: absolute;
+  position: fixed;
+  margin-bottom: 50%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .swiper-pagination-bullet{
-  height: 9px;
-  width: 29px;
-  border-radius: 25px;
+  height: 10px;
+  width: 35px;
+  padding: 8px;
+  border-radius: 50px;
   background: #FF6A3D;
 }
 
@@ -133,7 +125,7 @@ section .card .image img{
   width:  25%;
 }
 
-/*********************** The Form **************************/
+/***********************      NAV BAR     **************************/
 ul {
   list-style-type: none;
   margin: 0;
@@ -143,6 +135,7 @@ ul {
   position: fixed;
   top: 0;
   width: 100%;
+  font-size: 30px;
 }
 
 li {
