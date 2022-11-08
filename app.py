@@ -69,6 +69,7 @@ def card_PAO_memorization():
     per = df[4]
     act = df[5]
     obj = df[6]
+    print(df)
 
     return render_template('card_PAO_memorization.html', data=zip(images,per,act,obj))
 

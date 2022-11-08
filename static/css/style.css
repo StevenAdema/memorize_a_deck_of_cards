@@ -18,12 +18,13 @@ body{
 
 section{
   position: absolute;  
-  top: 50%;
-  height: 450px;
-  width: 80%;
+  top: 40%;
+  height: 50%;
+  width: 90%;
   max-width: 1050px;
   display: flex;
   align-items: center;
+  /* background-color: white; */
 }
 
 .header{
@@ -40,9 +41,8 @@ section{
 
 .card{
   position: relative;
-  background: red;
+  background: #1A2238;
   height:50%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card::before{
@@ -68,7 +68,6 @@ section .card .image img{
   height: 100%;
   width: 100%;
   object-fit: contain;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card .media-icons{
@@ -84,7 +83,8 @@ section .card .image img{
   font-weight: 600;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 24px;
+  opacity: 0.25;
 }
 
 
@@ -94,7 +94,7 @@ section .card .image img{
 
 .swiper-pagination{
   position: fixed;
-  margin-bottom: 50%;
+  margin-bottom: 20%;
   padding-left: 10%;
   padding-right: 10%;
 }
