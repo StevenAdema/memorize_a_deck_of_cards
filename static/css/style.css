@@ -18,7 +18,7 @@ body{
 
 section{
   position: absolute;  
-  top: 40%;
+  top: 35%;
   height: 50%;
   width: 90%;
   max-width: 1050px;
@@ -93,8 +93,8 @@ section .card .image img{
 }
 
 .swiper-pagination{
-  position: fixed;
-  margin-bottom: 20%;
+  position: flex;
+  /* margin-bottom: 20%; */
   padding-left: 10%;
   padding-right: 10%;
 }
