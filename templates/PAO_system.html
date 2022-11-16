@@ -7,20 +7,28 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
 
-    <link rel="stylesheet" href="{{url_for('static',filename='css/style_main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 </head>
 <body>
-
-  <div class='header'>
-  <ul>
-    <li><a href="{{ url_for('Index') }}">Home</a></li>
-    <li><a href="{{ url_for('memory_palace') }}">Memory Palace</a></li>
-    <li><a href="{{ url_for('PAO_system') }}">PAO System</a></li>
-    <li><a href="{{ url_for('card_PAO_memorization') }}">Single Card PAO</a></li>
-    <li><a href="{{ url_for('deck_memorization') }}">Deck Memorization</a></li>
-    <li><a href="{{ url_for('Index') }}">About</a></li>
-  </ul>
-</div>
+<!--  Menu Button  -->
+<div>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      <ul id="menu">
+        <a href="{{ url_for('Index') }}">Home</a><br>
+        <a href="{{ url_for('memory_palace') }}">Memory Palace</a><br>
+        <a href="{{ url_for('PAO_system') }}">PAO System</a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Single Card Mem</a><br>
+        <a href="{{ url_for('deck_memorization') }}">Full Deck Mem</a><br>
+        <a href="{{ url_for('Index') }}">Settings</a>
+      </ul>
+    </div>
+  </nav>
+  </div>
 
 <div class='card-table'>
     {% for table in tables %}

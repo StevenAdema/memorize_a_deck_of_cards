@@ -10,47 +10,71 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 </head>
 <body>
-<div class='header'>
-  <ul>
-    <li><a href="{{ url_for('Index') }}">Home</a></li>
-    <li><a href="{{ url_for('memory_palace') }}">Memory Palace</a></li>
-    <li><a href="{{ url_for('PAO_system') }}">PAO System</a></li>
-    <li><a href="{{ url_for('card_PAO_memorization') }}">Single Card PAO</a></li>
-    <li><a href="{{ url_for('deck_memorization') }}">Deck Memorization</a></li>
-    <li><a href="{{ url_for('Index') }}">About</a></li>
-  </ul>
+<!--  Menu Button  -->
+<div>
+<nav role="navigation">
+  <div id="menuToggle">
+    <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+    <ul id="menu">
+      <a href="{{ url_for('Index') }}">Home</a><br>
+      <a href="{{ url_for('memory_palace') }}">Memory Palace</a><br>
+      <a href="{{ url_for('PAO_system') }}">PAO System</a><br>
+      <a href="{{ url_for('card_PAO_memorization') }}">Single Card Mem</a><br>
+      <a href="{{ url_for('deck_memorization') }}">Full Deck Mem</a><br>
+      <a href="{{ url_for('Index') }}">Settings</a>
+    </ul>
+  </div>
+</nav>
 </div>
+<!--  Settings Button  -->
+<div>
+  <nav role="navigation">
+    <div id="menu2Toggle">
+      <input type="checkbox" />
+      <!-- <img class="gear" src="{{url_for('static', filename='img/gear.jpg')}}" /> -->
+      <ul id="menu2">
+        <a href="{{ url_for('Index') }}">Home</a><br>
+        <a href="{{ url_for('memory_palace') }}">Memory Palace</a><br>
+        <a href="{{ url_for('PAO_system') }}">PAO System</a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Single Card Mem</a><br>
+        <a href="{{ url_for('deck_memorization') }}">Full Deck Mem</a><br>
+        <a href="{{ url_for('Index') }}">Settings</a>
+      </ul>
+    </div>
+  </nav>
+  </div>
 
-  <section>
-    <div class="swiper mySwiper container">
-      <div class="swiper-wrapper content">
+<!--  Carousel Cards  -->
+  <div class="swiper mySwiper container">
+    <div class="swiper-wrapper content grid-middle">
 
-        {% for row,per,act,obj in data %}
-        <div class="swiper-slide card">
-          <div class="card-content">
-            <div class="image">
-              <img src="{{ row }}">
-            </div>
-
+      {% for row,per,act,obj in data %}
+      <div class="swiper-slide card">
+          <div class="image">
+            <img src="{{ row }}">
             <div class="name-profession">
-              <h3 class="pao">{{ per }}</h3>
-              <h3 class="pao">{{ act }}</h3>
-              <h3 class="pao">{{ obj }}</h3>
+              <div class="name-profession-toggle">
+                <h3 class="pao">{{ per }}</h3>
+                <h3 class="pao">{{ act }}</h3>
+                <h3 class="pao">{{ obj }}</h3>
+              </div>
             </div>
           </div>
-        </div>
-        {% endfor %}
-
       </div>
-    </div>
+      {% endfor %}
 
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </section>
+    </div>
+  </div>
+  
+  <!--  Carousel Buttons  -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
@@ -75,7 +99,6 @@
 if (keyboard === "true") {
    arrowKeys();
 }
-
   </script>
 
 </body>

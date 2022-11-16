@@ -1,0 +1,53 @@
+PaoSystemId,CardId,CardRank,Suit,Person,Action,Object,ImgLink
+1,12,3♥️,Hearts,Mike,Combing,Beard,/static/img/12.PNG
+1,44,10♠️,Spades,Legolas,Surfs,Sheild,/static/img/44.PNG
+1,18,10♦️,Diamonds,Lil Wayne,Drinks,Syrup,/static/img/18.PNG
+1,10,5♥️,Hearts,Sarah,Listening,Stethescope,/static/img/10.PNG
+1,48,6♠️,Spades,Batman,Glides,Cape,/static/img/48.PNG
+1,11,4♥️,Hearts,Rachel,Painting,Canvas,/static/img/11.PNG
+1,46,8♠️,Spades,BB-8,Lights,Lighter,/static/img/46.PNG
+1,24,4♦️,Diamonds,Richard Simmons,Dancing,Spandex,/static/img/24.PNG
+1,1,A♥️,Hearts️,Aki,Farting,Couch,/static/img/1.PNG
+1,17,J♦️,Diamonds,Jesus,Hangs,Cross,/static/img/17.PNG
+1,28,K♣️,Clubs,Nadal,Wipes,Headband,/static/img/28.PNG
+1,52,2♠️,Spades,R2D2,Zaps,Wombat,/static/img/52.PNG
+1,43,J♠️,Spades,Joker,Cuts,Knife,/static/img/43.PNG
+1,9,6♥️,Hearts,Brenda,Spraying,Table,/static/img/9.PNG
+1,38,3♣️,Clubs,Messi,Juggles,S Ball,/static/img/38.PNG
+1,50,4♠️,Spades,Aragorn,Rides,Horse,/static/img/50.PNG
+1,40,A♠️,Spades,Antman,Shinks,Ant,/static/img/40.PNG
+1,21,7♦️,Diamonds,Trump,Signs,Paper,/static/img/21.PNG
+1,45,9♠️,Spades,Gimli,Swings,Axe,/static/img/45.PNG
+1,47,7♠️,Spades,Thor,Throws,Hammer,/static/img/47.PNG
+1,20,8♦️,Diamonds,Einstein,Writes,Chalkboard,/static/img/20.PNG
+1,3,Q♥️,Hearts,Marsha,Talking,Phone,/static/img/3.PNG
+1,5,10♥️,Hearts,Lori-Anne,Holding,iPad,/static/img/5.PNG
+1,35,6♣️,Clubs,Bale,Ties,ManBun,/static/img/35.PNG
+1,29,Q♣️,Clubs,Genie,Twirls,Skirt,/static/img/29.PNG
+1,41,K♠️,Spades,Magneto,Levitates,Bullet,/static/img/41.PNG
+1,36,5♣️,Clubs,Suarez,Bites,Teeth,/static/img/36.PNG
+1,42,Q♠️,Spades,Raven,Becomes,Jennifer Lawrence,/static/img/42.PNG
+1,23,5♦️,Diamonds,Seinfeld,Scratches,Chest,/static/img/23.PNG
+1,51,3♠️,Spades,C3P0,Falls,Floor,/static/img/51.PNG
+1,30,J♣️,Clubs,Djokovic,Coughs,Covid,/static/img/30.PNG
+1,2,K♥️,Hearts,Gerrry,Cleaning,Subaru,/static/img/2.PNG
+1,32,9♣️,Clubs,MJ,Curteaus,Trophy,/static/img/32.PNG
+1,8,7♥️,Hearts,Ter,Limping,Leg,/static/img/8.PNG
+1,7,8♥️,Hearts,Eevee,Eating,Cheerios,/static/img/7.PNG
+1,39,2♣️,Clubs,Neymar,Rolls,Grass,/static/img/39.PNG
+1,19,9♦️,Diamonds,Ghandi,Gives,Money,/static/img/19.PNG
+1,15,K♦️,Diamonds,Kanye,Steals,Mic,/static/img/15.PNG
+1,27,A♣️,Clubs,Federer,Smashes,Tennis Ball,/static/img/27.PNG
+1,6,9♥️,Hearts,James,Typing,Computer,/static/img/6.PNG
+1,26,2♦️,Diamonds,Napoleon,Plants,Flag,/static/img/26.PNG
+1,4,J♥️,Hearts,Jan,Stripping,Bra,/static/img/4.PNG
+1,25,3♦️,Diamonds,Em,Vomits,Spaghetti,/static/img/25.PNG
+1,34,7♣️,Clubs,Crosby,Kisses,Stanley Cup,/static/img/34.PNG
+1,13,2♥️,Hearts,Sarah,Pushing,Stroller,/static/img/13.PNG
+1,22,6♦️,Diamonds,Bill Gates,Jumps,Chair,/static/img/22.PNG
+1,31,10♣️,Clubs,Lebron,Spins,Bball,/static/img/31.PNG
+1,49,5♠️,Spades,Spiderman,Shoots,Web,/static/img/49.PNG
+1,37,4♣️,Clubs,Ronaldo,Points,Lambo,/static/img/37.PNG
+1,16,Q♦️,Diamonds,Kim,Penetrates,Dildo,/static/img/16.PNG
+1,14,A♦️,Diamonds,Arnold,Lifts,Weights,/static/img/14.PNG
+1,33,8♣️,Clubs,Ovechkin,Hot Hands,Stick,/static/img/33.PNG

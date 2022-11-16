@@ -58,39 +58,127 @@ body{
 }
 
 
-/***********************     NAV BAR   **************************/
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #1A2238;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  font-size: 30px;
+
+/***************     MENU   ******************/
+#menuToggle
+{
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-li {
-  float: left;
-  border-right: 1px solid #bbb;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 15px 20px;
+#menuToggle a
+{
   text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
 }
 
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #9DAAF2;
+#menuToggle a:hover
+{
+  color: tomato;
 }
 
-.active {
-  background-color: #FF6a3d;
+
+#menuToggle input
+{
+  display: block;
+  width: 50px;
+  height: 45px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; 
+  z-index: 2;
+  
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 50px;
+  height: 6px;
+  margin-bottom: 10px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  font-size: 32px;
+}
+
+#menu li
+{
+  padding: 10px 0;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
 }
 
 /*************************   TABLE   ***********************************/
@@ -99,7 +187,7 @@ table{
 	width: 50%;
   align-content: center;
   margin: auto;
-  padding-top: 160px; 
+  padding-top: 60px; 
   border: none;
 }
 
