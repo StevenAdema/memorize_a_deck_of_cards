@@ -31,17 +31,19 @@
 </div>
 <!--  Settings Button  -->
 <div>
+  
+  <img class="gear" src="{{url_for('static', filename='img/gear.jpg')}}" />
   <nav role="navigation">
     <div id="menu2Toggle">
       <input type="checkbox" />
-      <!-- <img class="gear" src="{{url_for('static', filename='img/gear.jpg')}}" /> -->
+      <span></span>
+      <span></span>
+      <span></span>
       <ul id="menu2">
-        <a href="{{ url_for('Index') }}">Home</a><br>
-        <a href="{{ url_for('memory_palace') }}">Memory Palace</a><br>
-        <a href="{{ url_for('PAO_system') }}">PAO System</a><br>
-        <a href="{{ url_for('card_PAO_memorization') }}">Single Card Mem</a><br>
-        <a href="{{ url_for('deck_memorization') }}">Full Deck Mem</a><br>
-        <a href="{{ url_for('Index') }}">Settings</a>
+        <a href="{{ url_for('card_PAO_memorization') }}">Shuffle!</a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Suits: ♥ ♦ ♣ ♠</a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Show PAO Hints</a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Show Timer</a><br>
       </ul>
     </div>
   </nav>
