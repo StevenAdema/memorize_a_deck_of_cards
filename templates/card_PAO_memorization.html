@@ -41,13 +41,34 @@
       <span></span>
       <ul id="menu2">
         <a href="{{ url_for('card_PAO_memorization') }}">Shuffle!</a><br>
-        <a href="{{ url_for('card_PAO_memorization') }}">Suits: ♥ ♦ ♣ ♠</a><br>
-        <a href="{{ url_for('card_PAO_memorization') }}">Show PAO Hints</a><br>
+        <p onclick="show_hide_pao()">Show PAO Hints</p><br>
         <a href="{{ url_for('card_PAO_memorization') }}">Show Timer</a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Suits:  </a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Hearts</a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Diamonds</a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Clubs</a><br>
+        <a href="{{ url_for('card_PAO_memorization') }}">Spades</a><br>
       </ul>
     </div>
   </nav>
   </div>
+  <!--   STOP WATCH   -->
+  <!-- <div class="canvas">
+		<div class="center">
+			<input type="checkbox" checked id="switch">
+			<label class="pause-play-icon" for="switch"></label>				
+
+			<input type="checkbox" id="reset">
+			<label class="reset-icon" for="reset"></label>
+			<div class="clock">
+				<div class="hours"></div>
+				<span class="dots">:</span>
+				<div class="minutes"></div>
+				<span class="dots">:</span>
+				<div class="seconds"></div>
+			</div>
+		</div>
+	</div> -->
 
 <!--  Carousel Cards  -->
   <div class="swiper mySwiper container">
@@ -101,6 +122,22 @@
 if (keyboard === "true") {
    arrowKeys();
 }
+
+function show_hide_pao() {
+  var x = document.getElementsByClassName("name-profession");
+  console.log(x)
+  for (var i = 0; i < x.length; i++) {
+    if (i.style.color = "white") {
+      i.style.color = "red";
+    } else {
+      i.style.color = "white";
+    }
+  }
+}
+
+var x = document.getElementByClass("pao");
+x.onclick = show_hide_pao;
+
   </script>
 
 </body>
