@@ -41,7 +41,7 @@
       <span></span>
       <ul id="menu2">
         <a href="{{ url_for('card_PAO_memorization') }}">Shuffle!</a><br>
-        <p onclick="show_hide_pao()">Show PAO Hints</p><br>
+        <button class="button1" onclick="showHidePAO()"">Show PAO Hints</button><br>
         <a href="{{ url_for('card_PAO_memorization') }}">Show Timer</a><br>
         <a href="{{ url_for('card_PAO_memorization') }}">Suits:  </a><br>
         <a href="{{ url_for('card_PAO_memorization') }}">Hearts</a><br>
@@ -119,24 +119,25 @@
       },
     });
 
-if (keyboard === "true") {
-   arrowKeys();
-}
+// if (keyboard === "true") {
+//    arrowKeys();
+// }
+let hint = 0;
 
-function show_hide_pao() {
-  var x = document.getElementsByClassName("name-profession");
-  console.log(x)
-  for (var i = 0; i < x.length; i++) {
-    if (i.style.color = "white") {
-      i.style.color = "red";
-    } else {
-      i.style.color = "white";
+function showHidePAO() {
+  Array.from(document.getElementsByClassName("name-profession-toggle")).forEach(
+    function(element, index, array) {
+        if (hint == 0) {
+        element.style = 0; 
+        hint = 1;
+        console.log(hint)
+        } else {
+        element.style.opacity = 1; 
+        hint = 0;    
+        console.log(hint)      
+        }
     }
-  }
-}
-
-var x = document.getElementByClass("pao");
-x.onclick = show_hide_pao;
+)};
 
   </script>
 
