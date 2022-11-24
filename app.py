@@ -18,7 +18,7 @@ mysql = MySQL(app)
 def Index():
     # cur = mysql.connection.cursor()
     # cur.execute("SELECT * FROM card_system")
-    df = pd.read_csv('./data/pao.csv', sep=',')
+    df = pd.read_csv('pao.csv', sep=',')
     # df = pd.DataFrame(cur.fetchall())
     df = df.sample(frac=1).reset_index(drop=True) 
     print(df)
@@ -36,7 +36,7 @@ def Index():
 def memory_palace():
     # cur = mysql.connection.cursor()
     # cur.execute("SELECT * FROM card_system")
-    df = pd.read_csv('./data/pao.csv', sep=',')
+    df = pd.read_csv('pao.csv', sep=',')
     # df = pd.DataFrame(cur.fetchall())
     df = df.sample(frac=1).reset_index(drop=True) 
     images = df['ImgLink']
@@ -50,7 +50,7 @@ def memory_palace():
 def deck_memorization():
     # cur = mysql.connection.cursor()
     # cur.execute("SELECT * FROM card_system")
-    df = pd.read_csv('./data/pao.csv', sep=',')
+    df = pd.read_csv('pao.csv', sep=',')
     # df = pd.DataFrame(cur.fetchall())
     df = df.sample(frac=1).reset_index(drop=True) 
     index = df.index.values.tolist()
@@ -67,7 +67,7 @@ def deck_memorization():
 def card_PAO_memorization():
     # cur = mysql.connection.cursor()
     # cur.execute("SELECT * FROM card_system")
-    df = pd.read_csv('./data/pao.csv', sep=',')
+    df = pd.read_csv('pao.csv', sep=',')
     # df = pd.DataFrame(cur.fetchall())
     df = df.sample(frac=1).reset_index(drop=True) 
     images = df['ImgLink']
@@ -81,7 +81,7 @@ def card_PAO_memorization():
 def PAO_system():
     # cur = mysql.connection.cursor()
     # cur.execute("SELECT * FROM card_system")
-    df = pd.read_csv('./data/pao.csv', sep=',')
+    df = pd.read_csv('pao.csv', sep=',')
     # df = pd.DataFrame(cur.fetchall())
     df = df[['CardRank','Person','Action','Object']]
     df.columns = ['Card','Person','Action','Object']
